@@ -12,6 +12,9 @@
   },
   "hero": {
     "status": "Available for new projects",
+    "roleOne": "Full-Stack Developer",
+    "roleTwo": "Problem-Solver",
+    "roleThree": "Tech Enthusiast",
     "subtitle": "Building scalable digital experiences for web, mobile and enterprise systems.",
     "ctaProjects": "View Projects",
     "ctaContact": "Contact",

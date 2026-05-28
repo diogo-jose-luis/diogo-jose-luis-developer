@@ -45,9 +45,9 @@ export function PortfolioPage() {
   const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
   const [statusMessage, setStatusMessage] = useState("");
   const typed = useTypingEffect([
-    "Full-Stack Developer",
-    "Problem-Solver",
-    "Tech Enthusiast",
+    t("hero.roleOne"),
+    t("hero.roleTwo"),
+    t("hero.roleThree"),
   ]);
   const filtered = useMemo(
     () => projects.filter((project) => filter === "all" || project.category === filter),
