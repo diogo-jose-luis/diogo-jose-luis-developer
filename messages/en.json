@@ -1,0 +1,34 @@
+{
+  "meta": {
+    "title": "Diogo Luis | Full-Stack Developer",
+    "description": "Premium portfolio of Diogo Luis, freelance Full-Stack Developer focused on web, mobile, and enterprise systems."
+  },
+  "nav": {
+    "about": "About",
+    "skills": "Skills",
+    "experience": "Experience",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "hero": {
+    "status": "Available for new projects",
+    "subtitle": "Building scalable digital experiences for web, mobile and enterprise systems.",
+    "ctaProjects": "View Projects",
+    "ctaContact": "Contact",
+    "ctaGithub": "GitHub"
+  },
+  "sections": {
+    "about": "About Me",
+    "skills": "Skills / Technologies",
+    "experience": "Experience",
+    "projects": "Projects",
+    "mobile": "Mobile Apps",
+    "systems": "Internal Systems",
+    "services": "Services",
+    "process": "Work Process",
+    "stats": "Statistics",
+    "testimonials": "Testimonials",
+    "cta": "Let's build something remarkable?",
+    "contact": "Contacts"
+  }
+}
