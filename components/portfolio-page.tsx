@@ -492,11 +492,11 @@ export function PortfolioPage() {
             <a href="mailto:diogo.luis.job@hotmail.com" className="inline-flex items-center gap-2">
               <Mail className="h-4 w-4" /> Email
             </a>
-            <a href="#" className="inline-flex items-center gap-2">
+            <a href="https://wa.me/244936551407" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2">
               <Phone className="h-4 w-4" /> Telefone
             </a>
-            <a href="#">LinkedIn</a>
-            <a href="#">WhatsApp</a>
+            <a href="https://www.linkedin.com/in/diogojoseluis/" target="_blank" rel="noreferrer">LinkedIn</a>
+            <a href="https://wa.me/244936551407" target="_blank" rel="noreferrer">WhatsApp</a>
           </div>
         </section>
       </main>
