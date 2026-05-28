@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import { Inter } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
 import { routing } from "@/i18n/routing";
+import { getSiteUrl } from "@/lib/site";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,7 +17,7 @@ export async function generateMetadata({
   const { locale } = await params;
   const messages = (await import(`@/messages/${locale}.json`)).default;
   return {
-    metadataBase: new URL("https://diogo-luis.dev"),
+    metadataBase: new URL(getSiteUrl()),
     title: messages.meta.title,
     description: messages.meta.description,
     icons: {

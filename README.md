@@ -39,3 +39,11 @@ npm run start
 ## Deploy
 
 Projeto preparado para deploy na [Vercel](https://vercel.com/).
+
+### Variáveis na Vercel
+
+**SEO (domínio canónico):**
+
+- `NEXT_PUBLIC_SITE_URL` — URL pública do site (ex.: `https://diogo-jose-luis-developer.vercel.app` ou domínio customizado). Se não definires, a Vercel usa `VERCEL_URL` automaticamente.
+
+**Formulário de contacto (SMTP):** `MAIL_HOST`, `MAIL_PORT`, `MAIL_USERNAME`, `MAIL_PASSWORD`, `MAIL_ENCRYPTION`, `MAIL_FROM_ADDRESS`, `MAIL_FROM_NAME`, `CONTACT_TO_EMAIL`
