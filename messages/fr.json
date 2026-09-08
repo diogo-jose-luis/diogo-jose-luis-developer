@@ -20,6 +20,11 @@
     "ctaContact": "Contacter",
     "ctaGithub": "GitHub"
   },
+  "testimonials": {
+    "quoteOne": "Excellente capacité technique, organisation et communication à chaque livraison.",
+    "quoteTwo": "Livraisons cohérentes, avec un fort accent sur la qualité, la performance et l'expérience utilisateur.",
+    "quoteThree": "Professionnalisme élevé, vision stratégique et exécution impeccable sur des projets complexes."
+  },
   "sections": {
     "about": "À propos de moi",
     "skills": "Compétences / Technologies",

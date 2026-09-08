@@ -57,15 +57,15 @@ export function PortfolioPage() {
 
   const testimonialCards = [
     {
-      quote: "Excelente capacidade técnica, organização e comunicação em cada entrega.",
+      quote: t("testimonials.quoteOne"),
       icon: Sparkles,
     },
     {
-      quote: "Entrega consistente, com foco em qualidade, performance e experiência de utilizador.",
+      quote: t("testimonials.quoteTwo"),
       icon: Star,
     },
     {
-      quote: "Profissionalismo elevado, visão estratégica e execução impecável em projetos complexos.",
+      quote: t("testimonials.quoteThree"),
       icon: Rocket,
     },
   ];
