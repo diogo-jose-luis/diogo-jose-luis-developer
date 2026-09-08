@@ -115,7 +115,7 @@ export function PortfolioPage() {
   }
 
   return (
-    <div className="relative overflow-hidden bg-background text-foreground">
+    <div className="relative overflow-x-hidden bg-background text-foreground">
       <div className="pointer-events-none fixed inset-0 -z-10 bg-[radial-gradient(circle_at_20%_20%,rgba(120,119,198,0.18),transparent_30%),radial-gradient(circle_at_80%_0%,rgba(56,189,248,0.18),transparent_25%),radial-gradient(circle_at_50%_90%,rgba(139,92,246,0.14),transparent_30%)]" />
       <div className="pointer-events-none fixed inset-0 -z-10 bg-[linear-gradient(rgba(255,255,255,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.04)_1px,transparent_1px)] bg-[size:60px_60px]" />
 
