@@ -1,7 +1,7 @@
 export type Project = {
   name: string;
   url: string;
-  category: "web" | "enterprise";
+  category: "web" | "enterprise" | "mobile";
   image: string;
 };
 

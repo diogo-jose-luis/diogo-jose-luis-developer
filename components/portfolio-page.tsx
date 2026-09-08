@@ -24,6 +24,7 @@ import {
   GraduationCap,
   Target,
   Lightbulb,
+  Star,
 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -40,7 +41,7 @@ const fadeUp = {
 
 export function PortfolioPage() {
   const t = useTranslations();
-  const [filter, setFilter] = useState<"all" | "web" | "enterprise">("all");
+  const [filter, setFilter] = useState<"all" | "web" | "enterprise" | "mobile">("all");
   const [sending, setSending] = useState(false);
   const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
   const [statusMessage, setStatusMessage] = useState("");
@@ -53,6 +54,21 @@ export function PortfolioPage() {
     () => projects.filter((project) => filter === "all" || project.category === filter),
     [filter]
   );
+
+  const testimonialCards = [
+    {
+      quote: "Excelente capacidade técnica, organização e comunicação em cada entrega.",
+      icon: Sparkles,
+    },
+    {
+      quote: "Entrega consistente, com foco em qualidade, performance e experiência de utilizador.",
+      icon: Star,
+    },
+    {
+      quote: "Profissionalismo elevado, visão estratégica e execução impecável em projetos complexos.",
+      icon: Rocket,
+    },
+  ];
 
   async function handleContactSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -79,7 +95,6 @@ export function PortfolioPage() {
       try {
         data = (await response.json()) as { error?: string };
       } catch {
-        // Some environments can return an empty/non-JSON 200 response even after a successful send.
         data = {};
       }
 
@@ -145,6 +160,7 @@ export function PortfolioPage() {
                 <span className="animate-pulse">|</span>
               </p>
               <p className="mt-4 max-w-xl text-muted-foreground">{t("hero.subtitle")}</p>
+
               <div className="mt-8 flex flex-wrap gap-3">
                 <Button
                   size="lg"
@@ -163,12 +179,6 @@ export function PortfolioPage() {
                 >
                   {t("hero.ctaContact")}
                 </Button>
-                <a href="#" target="_blank" rel="noreferrer">
-                  <Button variant="outline" size="lg">
-                    <PenTool className="mr-2 h-4 w-4" />
-                    Figma UI/UX
-                  </Button>
-                </a>
                 <a href="https://github.com/diogo-jose-luis" target="_blank" rel="noreferrer">
                   <Button variant="ghost" size="lg">
                     <Globe className="mr-2 h-4 w-4" />
@@ -176,6 +186,24 @@ export function PortfolioPage() {
                   </Button>
                 </a>
               </div>
+
+              <div className="mt-6 flex flex-wrap gap-3 text-sm">
+                <a
+                  href="tel:+244936551407"
+                  className="inline-flex items-center gap-2 rounded-full border border-border/60 bg-background/40 px-3 py-2"
+                >
+                  <Phone className="h-4 w-4 text-primary" />
+                  +244 936 55 14 07
+                </a>
+                <a
+                  href="mailto:diogo.luis.job@hotmail.com"
+                  className="inline-flex items-center gap-2 rounded-full border border-border/60 bg-background/40 px-3 py-2"
+                >
+                  <Mail className="h-4 w-4 text-primary" />
+                  diogo.luis.job@hotmail.com
+                </a>
+              </div>
+
               <div className="mt-8 flex flex-wrap gap-2">
                 {["Glassmorphism", "Motion Design", "Enterprise Grade", "UX Focused"].map(
                   (item) => (
@@ -186,6 +214,7 @@ export function PortfolioPage() {
                 )}
               </div>
             </motion.div>
+
             <Card className="relative overflow-hidden p-3">
               <div className="absolute right-3 top-3 rounded-full border border-border/50 bg-black/50 p-2">
                 <Sparkles className="h-4 w-4 text-cyan-400" />
@@ -205,6 +234,19 @@ export function PortfolioPage() {
                   <Badge key={item}>{item}</Badge>
                 ))}
               </div>
+              <div className="mt-4 rounded-2xl border border-border/50 bg-muted/20 p-4">
+                <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
+                  Contactos rápidos
+                </p>
+                <div className="mt-3 space-y-2 text-sm">
+                  <a href="tel:+244936551407" className="flex items-center gap-2 text-foreground">
+                    <Phone className="h-4 w-4 text-primary" /> +244 936 55 14 07
+                  </a>
+                  <a href="mailto:diogo.luis.job@hotmail.com" className="flex items-center gap-2 text-foreground">
+                    <Mail className="h-4 w-4 text-primary" /> diogo.luis.job@hotmail.com
+                  </a>
+                </div>
+              </div>
             </Card>
           </div>
         </section>
@@ -215,9 +257,11 @@ export function PortfolioPage() {
             <Card className="p-6 md:col-span-2">
               <p className="text-lg font-medium">Diogo Luis</p>
               <p className="mt-3 text-muted-foreground">
-                Full-Stack Developer focado em produtos premium com UX elegante, performance alta
-                e arquitetura escalável. Bacharel em Ciências da Computação (UAN) e Tecnólogo em
-                Análise e Desenvolvimento de Sistemas (AIEC).
+                Desenvolvedor Full-Stack especializado em produtos digitais premium, interfaces
+                elegantes, desempenho elevado e arquitetura escalável para negócios que querem
+                crescer com consistência. Tenho formação em Ciências da Computação e em Análise e
+                Desenvolvimento de Sistemas, com foco em soluções web, mobile e sistemas
+                empresariais.
               </p>
               <div className="mt-5 grid gap-3 sm:grid-cols-2">
                 <div className="rounded-xl border border-border/50 p-4">
@@ -226,7 +270,7 @@ export function PortfolioPage() {
                     Formação
                   </p>
                   <p className="text-sm text-muted-foreground">
-                    Base técnica sólida em software, dados e engenharia.
+                    Base técnica sólida em software, dados, engenharia e inovação aplicada.
                   </p>
                 </div>
                 <div className="rounded-xl border border-border/50 p-4">
@@ -235,13 +279,13 @@ export function PortfolioPage() {
                     Missão
                   </p>
                   <p className="text-sm text-muted-foreground">
-                    Entregar soluções robustas que aceleram negócios.
+                    Entregar soluções robustas, intuitivas e prontas para o crescimento dos clientes.
                   </p>
                 </div>
               </div>
             </Card>
             <Card className="p-6">
-              <p className="mb-3 font-medium">DNA Profissional</p>
+              <p className="mb-3 font-medium">Perfil profissional</p>
               <div className="space-y-3 text-sm text-muted-foreground">
                 <p className="flex items-center gap-2">
                   <UserCheck className="h-4 w-4 text-primary" />
@@ -298,31 +342,37 @@ export function PortfolioPage() {
             </Card>
             <Card className="p-5">
               <Building2 className="mb-3 h-5 w-5" />
-              SISGEMA em uso desde 2016
+              SISGEMA em produção desde 2016
             </Card>
             <Card className="p-5">
               <Smartphone className="mb-3 h-5 w-5" />
-              Apps e sistemas enterprise internacionais
+              Apps, sistemas enterprise e integrações internacionais
             </Card>
           </div>
         </section>
 
         <section id="projects" className="space-y-6">
           <h2 className="text-3xl font-semibold">{t("sections.projects")}</h2>
-          <div className="flex gap-2">
-            {["all", "web", "enterprise"].map((key) => (
+          <div className="flex flex-wrap gap-2">
+            {[
+              { key: "all", label: "Todos" },
+              { key: "web", label: "Web" },
+              { key: "enterprise", label: "Enterprise" },
+              { key: "mobile", label: "Mobile" },
+            ].map((item) => (
               <Button
-                key={key}
-                variant={filter === key ? "default" : "outline"}
-                onClick={() => setFilter(key as typeof filter)}
+                key={item.key}
+                variant={filter === item.key ? "default" : "outline"}
+                onClick={() => setFilter(item.key as typeof filter)}
               >
-                {key}
+                {item.label}
               </Button>
             ))}
           </div>
+
           <div className="grid gap-4 md:grid-cols-2">
             {filtered.map((project) => (
-              <Card key={project.name} className="group p-5 transition hover:-translate-y-1">
+              <Card key={project.name} className="group overflow-hidden p-5 transition hover:-translate-y-1">
                 <div className="mb-3 overflow-hidden rounded-xl border border-border/40">
                   <Image
                     src={project.image}
@@ -333,8 +383,13 @@ export function PortfolioPage() {
                     loading="lazy"
                   />
                 </div>
-                <div className="flex items-center justify-between">
-                  <h3>{project.name}</h3>
+                <div className="flex items-center justify-between gap-3">
+                  <div>
+                    <h3 className="font-medium">{project.name}</h3>
+                    <p className="mt-1 text-xs uppercase tracking-[0.2em] text-primary">
+                      {project.category}
+                    </p>
+                  </div>
                   <a href={project.url} target="_blank" rel="noreferrer">
                     <ExternalLink className="h-4 w-4" />
                   </a>
@@ -348,19 +403,22 @@ export function PortfolioPage() {
           <Card className="p-5">
             <h3>{t("sections.mobile")}</h3>
             <p className="mt-2 text-sm text-muted-foreground">
-              KURLA, Talent Application For PZO e PIKA em desenvolvimento.
+              KURLA, Talent PZO e PIKA em evolução contínua, com foco em experiência mobile
+              premium e funcionalidade prática.
             </p>
           </Card>
           <Card className="p-5">
             <h3>{t("sections.systems")}</h3>
             <p className="mt-2 text-sm text-muted-foreground">
-              SISGEMA, ABA, HOPE e ROPEWAY-CREW para operações empresariais.
+              SISGEMA, ABA, IDS Man-Power, HOPE e ROPEWAY-CREW para operações empresariais,
+              produtividade e gestão estratégica.
             </p>
           </Card>
           <Card className="p-5">
             <h3>{t("sections.services")}</h3>
             <p className="mt-2 text-sm text-muted-foreground">
-              Web, mobile, APIs, automação, dashboards, consultoria tecnológica e UI/UX com Figma.
+              Web, mobile, APIs, automação, dashboards, consultoria tecnológica e design UX/UI com
+              Figma.
             </p>
           </Card>
         </section>
@@ -369,7 +427,7 @@ export function PortfolioPage() {
           <h2 className="text-3xl font-semibold">{t("sections.process")}</h2>
           <div className="grid gap-4 md:grid-cols-4">
             {[
-              { icon: Layers, title: "Discovery" },
+              { icon: Layers, title: "Descoberta" },
               { icon: Timer, title: "Arquitetura" },
               { icon: TestTube2, title: "Entrega Iterativa" },
               { icon: Rocket, title: "Otimização Contínua" },
@@ -392,25 +450,23 @@ export function PortfolioPage() {
             "+10 tecnologias",
             "+4 mil utilizadores",
             "Sistemas empresariais",
-          ].map(
-            (stat) => (
-              <Card key={stat} className="p-5 text-center text-lg font-semibold">
-                {stat}
-              </Card>
-            )
-          )}
+          ].map((stat) => (
+            <Card key={stat} className="p-5 text-center text-lg font-semibold">
+              {stat}
+            </Card>
+          ))}
         </section>
 
         <section className="space-y-4">
           <h2 className="text-3xl font-semibold">{t("sections.testimonials")}</h2>
           <div className="grid gap-4 md:grid-cols-3">
-            {[
-              "Excelente capacidade técnica e comunicação.",
-              "Entrega consistente com padrão enterprise.",
-              "Performance e UX sempre acima da média.",
-            ].map((quote) => (
+            {testimonialCards.map(({ quote, icon: Icon }) => (
               <Card key={quote} className="p-5 text-sm text-muted-foreground">
-                {quote}
+                <div className="mb-3 flex items-center justify-between">
+                  <Icon className="h-5 w-5 text-primary" />
+                  <Star className="h-4 w-4 text-amber-400" />
+                </div>
+                <p className="leading-6">“{quote}”</p>
               </Card>
             ))}
           </div>
@@ -420,7 +476,7 @@ export function PortfolioPage() {
           <h2 className="text-3xl font-semibold">{t("sections.cta")}</h2>
           <p className="mx-auto mt-2 max-w-2xl text-muted-foreground">
             Vamos transformar a tua ideia num produto digital premium, escalável e pronto para
-            crescimento internacional.
+            crescer com confiança e qualidade.
           </p>
           <Button
             className="mt-6"
@@ -495,8 +551,12 @@ export function PortfolioPage() {
             <a href="https://wa.me/244936551407" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2">
               <Phone className="h-4 w-4" /> Telefone
             </a>
-            <a href="https://www.linkedin.com/in/diogojoseluis/" target="_blank" rel="noreferrer">LinkedIn</a>
-            <a href="https://wa.me/244936551407" target="_blank" rel="noreferrer">WhatsApp</a>
+            <a href="https://www.linkedin.com/in/diogojoseluis/" target="_blank" rel="noreferrer">
+              LinkedIn
+            </a>
+            <a href="https://wa.me/244936551407" target="_blank" rel="noreferrer">
+              WhatsApp
+            </a>
           </div>
         </section>
       </main>
@@ -506,11 +566,11 @@ export function PortfolioPage() {
           <div className="flex items-center gap-3">
             <Image src="/images/djl-dev.png" alt="DJL Dev logo" width={26} height={26} />
             <p className="text-sm text-muted-foreground">
-              © {new Date().getFullYear()} Diogo Luis. All rights reserved.
+              © {new Date().getFullYear()} Diogo Luis. Todos os direitos reservados.
             </p>
           </div>
           <p className="text-xs text-muted-foreground">
-            Built with Next.js, TypeScript, Tailwind, Framer Motion and shadcn/ui.
+            Construído com Next.js, TypeScript, Tailwind, Framer Motion e shadcn/ui.
           </p>
         </div>
       </footer>
